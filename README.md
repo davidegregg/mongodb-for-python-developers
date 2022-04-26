@@ -29,7 +29,7 @@ We wrap up the course by deploying MongoDB to production linux servers. There ar
 
 ## Who is this course for?
 
-Anyone who knows Python and would like to learn how to use NoSQL, MongoDB, and document databases to build amazing applications.
+Anyone who knows Python and would like to learn how to use NoSQL, MongoDB, and document databases to build amazing applications!
 
 ## What will you learn in this course?
 

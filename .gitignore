@@ -108,3 +108,5 @@ src/07_mongoengine/service_central/.idea/service_central.iml
 src/07_mongoengine/service_central/.idea/inspectionProfiles/profiles_settings.xml
 screencaster.xml
 .idea
+*.bson
+*.json

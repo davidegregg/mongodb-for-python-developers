@@ -1,34 +1,38 @@
 import pymongo
 
-conn_str = 'mongodb://localhost:27017'
-client = pymongo.MongoClient(conn_str)
-
+# NOTE: In the video certain functions used have since been deprecated for more explicit versions. See
+# Connecting to MongoDB
+client = pymongo.MongoClient('mongodb://localhost:27017')
 db = client.the_small_bookstore
 
-# NOTE: In the video we use db.books.count(), it's been deprecated for more explicit
-# versions. See
-# https://api.mongodb.com/python/current/api/pymongo/collection.html#pymongo.collection.Collection.estimated_document_count
-# for details
+# Inserting some data
+# DO NOT RUN, books already inserted, for reference only
+#r = db.books.insert_one({'title': 'The First Book', 'isbn': '516848468'})
+#print(r, type(r))
+#r = db.books.insert_one({'title': 'The Second Book', 'isbn': '897778868'})
+#print(r.inserted_id)
 
+# Inserting data only if collection is empty
 if db.books.estimated_document_count() == 0:
     print("Inserting data")
     # insert some data...
-    r = db.books.insert_one({'title': 'The third book', 'isbn': '73738584947384'})
+    r = db.books.insert_one({'title': 'The Third Book', 'isbn': '56787676'})
     print(r, type(r))
-    r = db.books.insert_one({'title': 'The forth book', 'isbn': '181819884728473'})
+    r = db.books.insert_one({'title': 'The Fourth Book', 'isbn': '79761322'})
     print(r.inserted_id)
 else:
     print("Books already inserted, skipping")
 
-# book = db.books.find_one({'isbn': '73738584947384'})
-# # print(book, type(book))
-# # book['favorited_by'] = []
-# book['favorited_by'].append(100)
-# db.books.update({'_id': book.get('_id')}, book)
-# book = db.books.find_one({'isbn': '73738584947384'})
-# print(book)
+# Finding entry
+book = db.books.find_one({'isbn': '516848468'})
+print(book, type(book))
 
-# NOTE: In the video we use db.books.update(), migrated to update_one() as update() is deprecated.
-db.books.update_one({'isbn': '181819884728473'}, {'$addToSet': {'favorited_by': 120}})
-book = db.books.find_one({'isbn': '181819884728473'})
+# New data showing people who have favourite a book
+book['favourites'] = []
+book['favourites'].append(42)
+book = db.books.find_one({'isbn': '516848468'})
+print(book)
+
+db.books.update_one({'isbn': '516848468'}, {'$addToSet': {'favourites': 101}})
+book = db.books.find_one({'isbn': '516848468'})
 print(book)

@@ -1,0 +1,44 @@
+WITHOUT INDEXES
+How many owners? Time: 49.484 ms
+How many cars? Time: 124.196 ms
+Find the 10,000th owner? Time: 77.210 ms
+How many cars are owned by the 10,000th owner? Time: 4.083 ms
+How many owners own the 10,000th car? Time: 56.862 ms
+Find owner 50,000 by name? Time: 18.350 ms
+Cars with expensive service? Time: 431.518 ms
+Cars with expensive service and spark plugs? Time: 460.000 ms
+Load cars with expensive service and spark plugs? Time: 491.130 ms
+Load car name and ids with expensive service and spark plugs? Time: 492.962 ms
+Highly rated, high price service events? Time: 565.822 ms
+Low rated, low price service events? Time: 681.762 ms
+How many high mileage cars? Time: 217.662 ms
+
+WITH FIRST INDEX
+How many owners? Time: 47.710 ms
+How many cars? Time: 116.215 ms
+Find the 10,000th owner? Time: 62.508 ms
+How many cars are owned by the 10,000th owner? Time: 3.001 ms
+How many owners own the 10,000th car? Time: 180.917 ms
+Find owner 50,000 by name? Time: 16.849 ms
+Cars with expensive service? Time: 1.999 ms
+Cars with expensive service and spark plugs? Time: 20.463 ms
+Load cars with expensive service and spark plugs? Time: 18.080 ms
+Load car name and ids with expensive service and spark plugs? Time: 20.583 ms
+Highly rated, high price service events? Time: 20.353 ms
+Low rated, low price service events? Time: 1.537 ms
+How many high mileage cars? Time: 93.362 ms
+
+WITH MULTIPLE INDEXES
+How many owners? Time: 50.255 ms
+How many cars? Time: 119.596 ms
+Find the 10,000th owner? Time: 5.000 ms
+How many cars are owned by the 10,000th owner? Time: 2.777 ms
+How many owners own the 10,000th car? Time: 1.038 ms
+Find owner 50,000 by name? Time: 1.035 ms
+Cars with expensive service? Time: 2.586 ms
+Cars with expensive service and spark plugs? Time: 0.000 ms
+Load cars with expensive service and spark plugs? Time: 1.045 ms
+Load car name and ids with expensive service and spark plugs? Time: 0.920 ms
+Highly rated, high price service events? Time: 9.955 ms
+Low rated, low price service events? Time: 1.363 ms
+How many high mileage cars? Time: 6.638 ms
